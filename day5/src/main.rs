@@ -15,7 +15,7 @@ struct Input {
 
 fn parse_input () -> Input {
 
-    let lines: Vec<&str> = include_str!("data/example.txt").lines().collect();
+    let lines: Vec<&str> = include_str!("data/data.txt").lines().collect();
 
     let empty_loc: usize = lines
         .iter()
