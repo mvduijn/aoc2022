@@ -62,7 +62,7 @@ fn part2 (grid: &Grid<u32>) -> usize {
 
             let target = &grid[row][column];
 
-            let test: Vec<usize> = get_directions(grid, row, column)
+            let scores: Vec<usize> = get_directions(grid, row, column)
                 .iter()
                 .map(|val| {
                     let mut counter = 0;
@@ -84,7 +84,7 @@ fn part2 (grid: &Grid<u32>) -> usize {
                 })
                 .collect();
 
-            products.push(test.iter().product());
+            products.push(scores.iter().product());
         }
     }
     *products.iter().max().unwrap()
