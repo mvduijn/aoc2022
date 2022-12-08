@@ -118,7 +118,7 @@ fn generate_filesystem () -> FileSystem {
 fn part1 (file_system: &FileSystem) -> u32 {
 
     let mut all_directories = vec!(&file_system.directories["/"]);
-    all_directories.append(&mut get_all_directories_in(&file_system.directories["/"]));
+    all_directories.append(&mut get_all_directories_in(&all_directories[0]));
 
     all_directories
         .iter()
@@ -131,7 +131,7 @@ fn part1 (file_system: &FileSystem) -> u32 {
 fn part2 (file_system: &FileSystem) -> u32 {
 
     let mut all_directories = vec!(&file_system.directories["/"]);
-    all_directories.append(&mut get_all_directories_in(&file_system.directories["/"]));
+    all_directories.append(&mut get_all_directories_in(&all_directories[0]));
 
     let unused_space = 70000000 - &file_system.directories["/"].get_total_size();
 
